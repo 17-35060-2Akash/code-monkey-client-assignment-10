@@ -4,6 +4,7 @@ import Blog from "../Pages/Blog/Blog";
 import Courses from "../Pages/Courses/Courses";
 import FAQ from "../Pages/FAQ/FAQ";
 import Home from "../Pages/Home/Home";
+import NotFound from "../Pages/Others/NotFound/NotFound";
 
 export const router = createBrowserRouter([
     {
@@ -29,5 +30,9 @@ export const router = createBrowserRouter([
 
         ]
 
+    },
+    {
+        path: '*',
+        element: <NotFound></NotFound>
     }
 ]);
