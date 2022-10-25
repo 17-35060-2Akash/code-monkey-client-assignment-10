@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -15,6 +15,8 @@ import { FaToggleOn, FaToggleOff } from 'react-icons/fa';
 
 
 const Header = () => {
+    const [open, setOpen] = useState(false);
+
     return (
         <div className=''>
             {['lg'].map((expand) => (
@@ -51,6 +53,23 @@ const Header = () => {
 
                                     <Nav className='flex-grow-1'>
                                         {/* <NavLink className={({ isActive }) => isActive ? 'active' : undefined} to="/">Home</NavLink> */}
+                                        <div className='fs-1 px-3 ms-1 d-lg-none'>
+                                            {
+                                                open ?
+                                                    <>
+                                                        <FaToggleOff onClick={() => setOpen(!open)} className='text-secondary'></FaToggleOff>
+                                                        {/* <p>OFF</p> */}
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <FaToggleOn onClick={() => setOpen(!open)} className='text-danger' title='Dark Mode Switch'></FaToggleOn>
+                                                        {/* <p>ON</p> */}
+                                                    </>
+
+
+                                            }
+
+                                        </div>
                                         <Nav className='justify-content-end flex-grow-1 pe-3 nav-links mt-2'>
                                             <Link className='' to="/">Home</Link>
                                             <Link className='' to="/courses">Courses</Link>
@@ -59,9 +78,22 @@ const Header = () => {
                                         </Nav>
 
                                         {/* theme button */}
-                                        <div className='fs-1 px-3 ms-1'>
-                                            {/* <FaToggleOff></FaToggleOff> */}
-                                            <FaToggleOn></FaToggleOn>
+                                        <div className='fs-1 px-3 ms-1 d-none d-lg-block'>
+                                            {
+                                                open ?
+                                                    <>
+                                                        <FaToggleOff onClick={() => setOpen(!open)} className='text-secondary'></FaToggleOff>
+                                                        {/* <p>OFF</p> */}
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <FaToggleOn onClick={() => setOpen(!open)} className='text-danger' title='Dark Mode Switch'></FaToggleOn>
+                                                        {/* <p>ON</p> */}
+                                                    </>
+
+
+                                            }
+
                                         </div>
                                     </Nav>
                                 </Nav>

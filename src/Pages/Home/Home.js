@@ -7,6 +7,7 @@ import carousel3 from "../../assets/carouselImages/carousel3.jpg";
 import carousel4 from "../../assets/carouselImages/carousel4.jpg";
 import './Home.css';
 import { FaDatabase, FaGlobe, FaDesktop, FaMobileAlt, FaReact, FaRobot, FaArrowRight } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -55,7 +56,7 @@ const Home = () => {
                 <div className='get-started text-start my-5'>
                     <p className='display-6 text-start p-4'>Get Started with Code Monkey Today to get a
                         <span className='text-primary fw-normal'> flat 50%</span> discount today.</p>
-                    <Button variant='danger' className='ms-4 px-5 py-3 fs-3'>Get Started</Button>
+                    <Button className='ms-4 px-5 py-3 fs-3 my-bg-red'>Get Started</Button>
                 </div>
                 <div className='text-center me-5'>
                     <div className='advertise-panel d-flex align-items-center my-5'>
@@ -77,7 +78,11 @@ const Home = () => {
                         A little bit of knowledge lets them know that you understand current trends, that you’re proactive and curious,
                         that you’ll be able to communicate with colleagues and clients about the technical aspects, and that just
                         maybe you might be able to pitch in on bigger projects.</p>
-                    <Button variant='danger' className='ms-4 px-5 py-2 fs-3 pb-3'>Courses  <FaArrowRight></FaArrowRight></Button>
+                    <Link to='/courses'>
+                        <Button className='ms-4 px-5 py-2 fs-3 pt-3 my-bg-red'>
+                            <p className='text-nowrap'>Courses  <FaArrowRight></FaArrowRight></p>
+                        </Button>
+                    </Link>
                 </div>
 
                 <Container className='options-container mt-5' >

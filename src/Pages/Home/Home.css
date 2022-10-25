@@ -26,3 +26,12 @@
         gap: 1rem;
     }
 }
+
+.my-bg-red {
+    background-color: #ed1c24;
+    border: none;
+}
+
+.my-bg-red:hover {
+    background-color: #2040fe;
+}

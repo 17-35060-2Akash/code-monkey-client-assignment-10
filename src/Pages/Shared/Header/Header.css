@@ -20,11 +20,15 @@
     /* background-color: rgb(235, 231, 231);
     padding: 10px;
     border-radius: 10px; */
-    color: cornflowerblue;
+    color: 2040fe;
 }
 
 .active {
     transform: scale(1.2);
     background-color: bisque;
     border-radius: 10px;
+}
+
+.my-bg-red {
+    background-color: #ed1c24;
 }

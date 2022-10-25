@@ -1,0 +1,28 @@
+.courses-page-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+
+.course-categories {
+    background-color: rgb(220, 220, 220, 0.3);
+    border: none;
+    border-radius: 0;
+    height: 80px;
+
+}
+
+.course-categories:hover {
+    background-color: rgb(220, 220, 220, 0.6);
+
+}
+
+.course-categories a {
+    text-decoration: none;
+    color: #ed1c24;
+    font-size: 2vw;
+}
+
+.course-categories a:hover {
+    color: #2040fe;
+}
