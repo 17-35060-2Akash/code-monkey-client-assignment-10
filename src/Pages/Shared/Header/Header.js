@@ -11,17 +11,20 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 // import logo from '../../images/logo2.png';
 import logo2 from '../../../assets/images/logo2.png';
+import { FaToggleOn, FaToggleOff } from 'react-icons/fa';
+
 
 const Header = () => {
     return (
         <div className=''>
             {['lg'].map((expand) => (
-                <Navbar key={expand} bg="warning" expand={expand} className="">
+                <Navbar key={expand} bg="light" expand={expand} className="" >
                     <Container fluid className='mx-3'>
 
                         <Navbar.Brand>
                             <Link to='/'><img className='logo-img img-fluid pb-2' src={logo2} alt="" /></Link>
                         </Navbar.Brand>
+                        <h4></h4>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}
@@ -46,12 +49,21 @@ const Header = () => {
                                         <Button variant="outline-success">Search</Button>
                                     </Form>
 
-                                    <div className='d-flex flex-md-column flex-lg-row'>
-                                        <Link className='pb-3 display-6 fw-normal' to="/">Home</Link>
-                                        <Link className='pb-3 display-6 fw-normal' to="/courses">Courses</Link>
-                                        <Link className='pb-3 display-6 fw-normal' to="/blog">Blog</Link>
-                                        <Link className='pb-3 display-6 fw-normal' to="/faq">FAQ</Link>
-                                    </div>
+                                    <Nav className='flex-grow-1'>
+                                        {/* <NavLink className={({ isActive }) => isActive ? 'active' : undefined} to="/">Home</NavLink> */}
+                                        <Nav className='justify-content-end flex-grow-1 pe-3 nav-links mt-2'>
+                                            <Link className='' to="/">Home</Link>
+                                            <Link className='' to="/courses">Courses</Link>
+                                            <Link className='' to="/blog">Blog</Link>
+                                            <Link className='' to="/faq">FAQ</Link>
+                                        </Nav>
+
+                                        {/* theme button */}
+                                        <div className='fs-1 px-3 ms-1'>
+                                            {/* <FaToggleOff></FaToggleOff> */}
+                                            <FaToggleOn></FaToggleOn>
+                                        </div>
+                                    </Nav>
                                 </Nav>
 
                             </Offcanvas.Body>

@@ -8,9 +8,10 @@ const Main = () => {
     return (
         <div>
             <Header></Header>
-            <Container className='outlet-container' style={{ height: '90vh' }}>
+            {/* <div className='outlet-container' style={{ height: '90vh', width: '100%' }}> */}
+            <div>
                 <Outlet></Outlet>
-            </Container>
+            </div>
             <Footer></Footer>
         </div>
     );
