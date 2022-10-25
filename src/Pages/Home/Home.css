@@ -1,0 +1,28 @@
+.get-started-container {
+    /* display: grid;
+    grid-template-columns: 2fr 3fr; */
+}
+
+.options-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.options-card {
+    width: 150px;
+    /* height: 30px; */
+}
+
+.options-div:hover {
+    box-shadow: 10px 5px 10px gray;
+    transition: box-shadow 1s ease;
+}
+
+@media screen and (max-width: 700px) {
+    .options-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+}

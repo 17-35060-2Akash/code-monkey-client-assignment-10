@@ -1,0 +1,19 @@
+.footer-nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-nav a:hover {
+    color: cadetblue;
+}
+
+
+
+.platform-icons a {
+    text-decoration: none;
+    color: white;
+}
+
+.platform-icons a:hover {
+    color: cadetblue;
+}
