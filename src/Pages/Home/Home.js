@@ -56,7 +56,7 @@ const Home = () => {
                 <div className='get-started text-start my-5'>
                     <p className='display-6 text-start p-4'>Get Started with Code Monkey Today to get a
                         <span className='text-primary fw-normal'> flat 50%</span> discount today.</p>
-                    <Button className='ms-4 px-5 py-3 fs-3 my-bg-red'>Get Started</Button>
+                    <Button className='ms-4 px-5 py-3 fs-3 my-bg-red border-0'>Get Started</Button>
                 </div>
                 <div className='text-center me-5'>
                     <div className='advertise-panel d-flex align-items-center my-5'>
@@ -79,7 +79,7 @@ const Home = () => {
                         that you’ll be able to communicate with colleagues and clients about the technical aspects, and that just
                         maybe you might be able to pitch in on bigger projects.</p>
                     <Link to='/courses'>
-                        <Button className='ms-4 px-5 py-2 fs-3 pt-3 my-bg-red'>
+                        <Button className='ms-4 px-5 py-2 fs-3 pt-3 border-0 my-bg-red'>
                             <p className='text-nowrap'>Courses  <FaArrowRight></FaArrowRight></p>
                         </Button>
                     </Link>
