@@ -103,10 +103,10 @@ const Header = () => {
                                                     :
                                                     <>
                                                         <Link className='' to="/login">
-                                                            <Button variant='light' className='fs-6 fw-semibold'>Login</Button>
+                                                            <Button variant='light' className='fs-6'>Login</Button>
                                                         </Link>
                                                         <Link className='' to="/register">
-                                                            <Button variant='light' className='fs-6 fw-semibold'>Sign Up</Button>
+                                                            <Button variant='light' className='fs-6'>Sign Up</Button>
                                                         </Link>
                                                     </>
                                             }

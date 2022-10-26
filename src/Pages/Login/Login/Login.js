@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
 
@@ -14,9 +14,13 @@ import { useState } from 'react';
 const Login = () => {
     const navigate = useNavigate();
 
-    const { providerLoginGoogle, signIn } = useContext(AuthContext);
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
+    const { providerLoginGoogle, signIn, providerLoginGithub, setLoading } = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const [error, setError] = useState('');
 
@@ -37,16 +41,18 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
                 form.reset();
                 toast.success('Welcome!');
-                navigate('/');
+                // navigate('/');
                 setError('');
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error);
                 setError(error.message);
             })
+            .finally(() => setLoading(false))
 
     };
 
@@ -54,7 +60,18 @@ const Login = () => {
         providerLoginGoogle(googleProvider)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
+                navigate(from, { replace: true })
+            })
+            .catch(error => console.error(error))
+    };
+
+    const handleGithubSignIn = () => {
+        providerLoginGithub(githubProvider)
+            .then(result => {
+                const user = result.user;
+                // console.log(user);
+                navigate(from, { replace: true })
             })
             .catch(error => console.error(error))
     };
@@ -100,7 +117,7 @@ const Login = () => {
                 <h4 className='fs-3 fw-lighter pt-4'>or login by</h4>
                 <div className='other-options-form '>
                     <Button onClick={handleGoogleSignIn} variant='outline-dark' className='my-2 py-2 auth-sign-in-btn'><FaGoogle></FaGoogle> Google Login</Button>
-                    <Button variant='outline-dark' className='my-2 py-2 auth-sign-in-btn'><FaGithub></FaGithub> Github Login</Button>
+                    <Button onClick={handleGithubSignIn} variant='outline-dark' className='my-2 py-2 auth-sign-in-btn'><FaGithub></FaGithub> Github Login</Button>
                 </div>
             </div>
         </section>
