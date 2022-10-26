@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
 import './Register.css';
 
 
 const Register = () => {
     const [accepted, setAccepted] = useState(false);
+
+    const { createUser } = useContext(AuthContext);
 
     const handleRegister = (event) => {
         event.preventDefault();
@@ -15,8 +20,16 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photoURL, email, password)
+        // console.log(name, photoURL, email, password);
 
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                toast.success('Successfully Signed Up!');
+            })
+            .catch(error => console.error(error))
     };
 
     const handleAccepted = event => {

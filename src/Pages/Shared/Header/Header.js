@@ -11,11 +11,21 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 // import logo from '../../images/logo2.png';
 import logo2 from '../../../assets/images/logo2.png';
-import { FaToggleOn, FaToggleOff } from 'react-icons/fa';
+import { FaToggleOn, FaToggleOff, FaUser } from 'react-icons/fa';
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { Image } from 'react-bootstrap';
 
 
 const Header = () => {
     const [open, setOpen] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLOgOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    };
 
     return (
         <div className=''>
@@ -77,9 +87,29 @@ const Header = () => {
                                             <Link className='' to="/faq">FAQ</Link>
                                         </Nav>
 
-                                        <Nav className='justify-content-end flex-grow-1 pe-3 nav-links mt-2'>
-                                            <Link className='' to="/login">Login</Link>
-                                            <Link className='' to="/register">Sign Up</Link>
+                                        <Nav className='justify-content-end flex-grow-1 flex-row align-items-center pe-3 nav-links'>
+                                            {
+                                                user?.uid ?
+                                                    <>
+                                                        {
+                                                            user?.photoURL ?
+                                                                <span title={user?.displayName}><Image className='me-3' roundedCircle src={user.photoURL} style={{ height: '40px' }} ></Image></span>
+                                                                :
+                                                                <span title={user?.displayName}><FaUser className='me-3 rounded rounded-4 p-1 fs-1 bg-info' ></FaUser></span>
+                                                        }
+                                                        {/* <span >{user?.displayName}</span> */}
+                                                        <Button onClick={handleLOgOut} className='btn-danger'>Logout</Button>
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <Link className='' to="/login">
+                                                            <Button variant='light' className='fs-6 fw-semibold'>Login</Button>
+                                                        </Link>
+                                                        <Link className='' to="/register">
+                                                            <Button variant='light' className='fs-6 fw-semibold'>Sign Up</Button>
+                                                        </Link>
+                                                    </>
+                                            }
                                         </Nav>
 
                                         {/* theme button */}
