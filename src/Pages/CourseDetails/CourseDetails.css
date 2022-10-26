@@ -12,9 +12,31 @@
     border-radius: 0;
 }
 
+.course-title {
+    font-size: 3vw;
+    font-weight: 300;
+}
+
+.course-ratings {
+    font-size: 1.5vw;
+    padding: 10px 10px;
+    padding-bottom: 20px;
+}
+
 .card-writings {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-    font-size: 1.5vw;
+}
+
+.card-details {
+    padding: 10px 0;
+    font-size: 1.8vw;
+
+}
+
+.curriculam-details {
+    padding: 40px 10px;
+    font-size: 1.8vw;
+
 }
 
 .my-bg-pink {
@@ -22,27 +44,34 @@
     border: none;
 }
 
-.premium-btn {
-    margin-top: 80px;
+.btn-container {
+    margin-top: 100px;
 }
 
-@media screen and (max-width: 900px) {
-    .card-writings {
-        font-size: 1.5vw;
+.premium-btn {
+    font-size: 1.8vw;
+    padding: 30px 40px;
+}
+
+.premium-sm-btn {}
+
+
+
+@media screen and (max-width: 1100px) {
+
+    .btn-container {
+        margin-top: 0;
+    }
+
+    .curriculam-details {
+        padding: 0 0;
+        font-size: 1.8vw;
+
     }
 
     .premium-btn {
-        font-size: 9px;
-        margin-bottom: 100px;
-
-    }
-
-    .btn-container {
-        margin-left: 20px;
-
-    }
-
-    .course-title {
-        font-size: 15px;
+        /* font-size: 20px; */
+        padding: 20px 25px;
+        margin: 20px 0;
     }
 }

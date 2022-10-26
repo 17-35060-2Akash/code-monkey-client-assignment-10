@@ -77,6 +77,11 @@ const Header = () => {
                                             <Link className='' to="/faq">FAQ</Link>
                                         </Nav>
 
+                                        <Nav className='justify-content-end flex-grow-1 pe-3 nav-links mt-2'>
+                                            <Link className='' to="/login">Login</Link>
+                                            <Link className='' to="/register">Sign Up</Link>
+                                        </Nav>
+
                                         {/* theme button */}
                                         <div className='fs-1 px-3 ms-1 d-none d-lg-block'>
                                             {

@@ -19,7 +19,8 @@ const Course = ({ course }) => {
                 <Card.Img src={image} alt="Card image" className='img-bg' />
                 <Card.ImgOverlay className='card-writings flex-grow-1 align-items-end'>
                     <Card.Title className='card-text flex-grow course-name fs-4 fw-normal '>{name}</Card.Title>
-                    <Card.Footer className='d-flex align-items-center justify-content-between mt-1'>
+
+                    <section className='d-flex align-items-center justify-content-between mt-1'>
                         <Card.Title className='d-flex align-items-center course-name'>
                             <FaStar className='text-warning'></FaStar>
                             <span className='ps-1'>{ratings}</span>
@@ -28,7 +29,7 @@ const Course = ({ course }) => {
                             <FaClock></FaClock>
                             <span className='ps-1'>{duration}</span>
                         </Card.Title>
-                    </Card.Footer>
+                    </section>
                 </Card.ImgOverlay>
             </Card>
         </Col>

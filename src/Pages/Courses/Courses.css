@@ -20,9 +20,15 @@
 .course-categories a {
     text-decoration: none;
     color: #ed1c24;
-    font-size: 2vw;
+    /* font-size: 1.5vw; */
 }
 
 .course-categories a:hover {
     color: #2040fe;
+}
+
+@media screen and (max-width: 900px) {
+    .course-categories a {
+        /* font-size: 30px; */
+    }
 }

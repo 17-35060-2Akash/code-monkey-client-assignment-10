@@ -36,23 +36,3 @@ const Checkout = () => {
 export default Checkout;
 
 
-{/* <Card className="text-center">
-                
-                <Card.Header className='pb-4' style={{ backgroundColor: '#ff1f59' }}>
-                    <div className='fs-3 py-2 mt-2 me-2 d-flex align-items-center justify-content-end' title='Download PDF'>
-                        <FaFilePdf className='pdf-btn display-6'></FaFilePdf>
-                    </div>
-                    <div>
-                        
-                    </div>
-
-
-                </Card.Header>
-                <Card.Body>
-
-
-                </Card.Body>
-                <Card.Footer >
-
-                </Card.Footer>
-            </Card> */}
