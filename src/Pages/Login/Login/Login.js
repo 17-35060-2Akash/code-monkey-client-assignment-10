@@ -18,6 +18,8 @@ const Login = () => {
 
     const googleProvider = new GoogleAuthProvider();
 
+    const [error, setError] = useState('');
+
     const [accepted, setAccepted] = useState(false);
     const handleAccepted = event => {
         setAccepted(event.target.checked);
@@ -39,8 +41,12 @@ const Login = () => {
                 form.reset();
                 toast.success('Welcome!');
                 navigate('/');
+                setError('');
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
+            })
 
     };
 
@@ -71,6 +77,11 @@ const Login = () => {
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" onClick={handleAccepted} label="Accept all cookies" required />
                     </Form.Group>
+
+                    <Form.Text className="text-danger fs-6 fw-normal">
+                        {error}
+                    </Form.Text> <br />
+
                     <Button variant="primary" type="submit" className='px-5 pb-2 mt-3' disabled={!accepted}>
                         Login
                     </Button><br />
@@ -81,9 +92,7 @@ const Login = () => {
                             <Button variant='danger' className='px-5 pb-2 mt-3 my-bg-red'>Sign Up</Button>
                         </Link>
                     </div>
-                    <Form.Text className="text-danger">
 
-                    </Form.Text>
                 </Form>
             </Container>
 

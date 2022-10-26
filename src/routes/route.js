@@ -9,6 +9,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login/Login";
 import Register from "../Pages/Login/Register/Register";
 import NotFound from "../Pages/Others/NotFound/NotFound";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -39,7 +40,10 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/checkout/:id',
-                element: <Checkout></Checkout>,
+                element:
+                    <PrivateRoute>
+                        <Checkout></Checkout>
+                    </PrivateRoute>,
                 loader: async ({ params }) => fetch(`https://code-monkey-server.vercel.app/courses/${params.id}`)
             },
             {

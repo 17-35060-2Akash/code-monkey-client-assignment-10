@@ -9,6 +9,7 @@ import './Register.css';
 
 const Register = () => {
     const [accepted, setAccepted] = useState(false);
+    const [error, setError] = useState('');
 
     const { createUser } = useContext(AuthContext);
 
@@ -27,9 +28,14 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                setError('');
                 toast.success('Successfully Signed Up!');
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
+
+            })
     };
 
     const handleAccepted = event => {
@@ -69,6 +75,10 @@ const Register = () => {
                         label={<>Accept all the <Link to='/terms'>Terms & Conditions</Link> </>} required />
                 </Form.Group>
 
+                <Form.Text className="text-danger fs-6 fw-normal">
+                    {error}
+                </Form.Text> <br />
+
 
                 <Button variant='primary' type="submit" className='px-5 mt-3 my-bg-red' disabled={!accepted}>
                     Sign Up
@@ -79,9 +89,7 @@ const Register = () => {
                         <Button variant='danger' className='px-5 pb-2 mt-2 my-bg-red'>Login</Button>
                     </Link>
                 </div>
-                <Form.Text className="text-danger">
 
-                </Form.Text>
             </Form>
         </Container>
     );
