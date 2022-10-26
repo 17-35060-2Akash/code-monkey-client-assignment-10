@@ -112,7 +112,7 @@ const Blog = () => {
                 <p className='fs-3 fw-lighter'>
                     <strong><span className='text-success fw-normal fs-1'> Node </span>
                         is used as backend service where javascript works on the server-side of the application.
-                        <span className='text-primary'>Node allows developers to write JavaScript code that runs
+                        <span className='text-primary text-decoration-underline'> Node allows developers to write JavaScript code that runs
                             directly in a computer process itself instead of in a
                             browser.</span> Node can, therefore, be used to write server-side
                         applications with access to the operating system, file
