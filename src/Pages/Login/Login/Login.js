@@ -116,8 +116,8 @@ const Login = () => {
             <div className='bg-light'>
                 <h4 className='fs-3 fw-lighter pt-4'>or login by</h4>
                 <div className='other-options-form '>
-                    <Button onClick={handleGoogleSignIn} variant='outline-dark' className='my-2 py-2 auth-sign-in-btn'><FaGoogle></FaGoogle> Google Login</Button>
-                    <Button onClick={handleGithubSignIn} variant='outline-dark' className='my-2 py-2 auth-sign-in-btn'><FaGithub></FaGithub> Github Login</Button>
+                    <Button onClick={handleGoogleSignIn} variant='outline-dark' className='my-2 py-3 auth-sign-in-btn'><span className='d-flex flex-row justify-content-center align-items-center'><FaGoogle className='text-primary me-2 fs-4'></FaGoogle><span className='text-nowrap'>Google Login</span></span></Button>
+                    <Button onClick={handleGithubSignIn} variant='outline-dark' className='my-2 py-3 auth-sign-in-btn'><span className='d-flex flex-row justify-content-center align-items-center'><FaGithub className='text-success me-2 fs-4'></FaGithub><span className='text-nowrap'>Github Login</span></span></Button>
                 </div>
             </div>
         </section>

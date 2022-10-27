@@ -18,9 +18,12 @@
 }
 
 .course-ratings {
-    font-size: 1.5vw;
-    padding: 10px 10px;
+    padding: 10px 30px;
     padding-bottom: 20px;
+}
+
+.rating-duration-text {
+    font-size: 2vw;
 }
 
 .card-writings {
@@ -28,7 +31,7 @@
 }
 
 .card-details {
-    padding: 10px 0;
+    padding: 5px 0;
     font-size: 1.8vw;
 
 }
@@ -36,6 +39,7 @@
 .curriculam-details {
     padding: 40px 10px;
     font-size: 1.8vw;
+    margin-left: 40px;
 
 }
 
@@ -49,8 +53,7 @@
 }
 
 .premium-btn {
-    font-size: 1.8vw;
-    padding: 30px 40px;
+    margin-right: 80px;
 }
 
 .premium-sm-btn {}
@@ -71,7 +74,34 @@
 
     .premium-btn {
         /* font-size: 20px; */
-        padding: 20px 25px;
+        padding: 25px 25px;
         margin: 20px 0;
+        /* margin-left: 50px; */
+        margin-right: 30px;
     }
+
+    #card-to-pdf {
+        width: 100%;
+        margin-left: 6px !important;
+    }
+
+
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+    /* .premium-btn {
+        padding: 5px 10px;
+        margin: 0 0;
+        margin-top: -130px;
+    } */
+
+    /* .premium-btn {
+        font-size: 0.5vw;
+        padding: 5px 10px;
+    } */
+}
+
+#card-to-pdf {
+    width: 100%;
+    margin-left: 120px;
 }

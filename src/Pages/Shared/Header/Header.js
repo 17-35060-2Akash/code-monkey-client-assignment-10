@@ -61,33 +61,10 @@ const Header = () => {
                                         <Button variant="outline-success">Search</Button>
                                     </Form>
 
-                                    <Nav className='flex-grow-1'>
-                                        {/* <NavLink className={({ isActive }) => isActive ? 'active' : undefined} to="/">Home</NavLink> */}
-                                        <div className='fs-1 px-3 ms-1 d-lg-none'>
-                                            {
-                                                open ?
-                                                    <>
-                                                        <FaToggleOff onClick={() => setOpen(!open)} className='text-secondary'></FaToggleOff>
-                                                        {/* <p>OFF</p> */}
-                                                    </>
-                                                    :
-                                                    <>
-                                                        <FaToggleOn onClick={() => setOpen(!open)} className='text-danger' title='Dark Mode Switch'></FaToggleOn>
-                                                        {/* <p>ON</p> */}
-                                                    </>
+                                    <Nav className='flex-grow-1 pb-2 '>
 
-
-                                            }
-
-                                        </div>
-                                        <Nav className='justify-content-end flex-grow-1 pe-3 nav-links mt-2'>
-                                            <Link className='' to="/">Home</Link>
-                                            <Link className='' to="/courses">Courses</Link>
-                                            <Link className='' to="/blog">Blog</Link>
-                                            <Link className='' to="/faq">FAQ</Link>
-                                        </Nav>
-
-                                        <Nav className='justify-content-end flex-grow-1 flex-row align-items-center pe-3 nav-links'>
+                                        {/* for side menu   */}
+                                        <div className='fs-1 px-3 ms-1 d-lg-none '>
                                             {
                                                 user?.uid ?
                                                     <>
@@ -103,17 +80,65 @@ const Header = () => {
                                                     :
                                                     <>
                                                         <Link className='' to="/login">
-                                                            <Button variant='light' className='fs-6'>Login</Button>
+                                                            <Button variant='light' className='fs-5 px-2 mb-1 '>Login</Button>
                                                         </Link>
                                                         <Link className='' to="/register">
-                                                            <Button variant='light' className='fs-6'>Sign Up</Button>
+                                                            <Button variant='light' className='fs-5 px-2 mb-1 '><span className='text-nowrap'>Sign Up</span></Button>
                                                         </Link>
+                                                    </>
+                                            }
+                                            {
+                                                open ?
+                                                    <>
+                                                        <FaToggleOff onClick={() => setOpen(!open)} className='text-secondary display-5 ms-5 mb-2'></FaToggleOff>
+                                                        {/* <p>OFF</p> */}
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <FaToggleOn onClick={() => setOpen(!open)} className='text-danger display-5 ms-5 mb-2' title='Dark Mode Switch'></FaToggleOn>
+                                                        {/* <p>ON</p> */}
+                                                    </>
+
+
+                                            }
+
+                                        </div>
+                                        <Nav className='justify-content-center flex-grow-1 pe-3 nav-links mt-2'>
+                                            <Link className='fs-5 fw-normal mx-4' to="/">Home</Link>
+                                            <Link className='fs-5 fw-normal mx-4' to="/courses">Courses</Link>
+                                            <Link className='fs-5 fw-normal mx-4' to="/blog">Blog</Link>
+                                            <Link className='fs-5 fw-normal mx-4' to="/faq">FAQ</Link>
+                                        </Nav>
+
+                                        <Nav className='d-flex flex-row align-items-center justify-content-center nav-links d-none d-lg-block mt-2'>
+                                            {
+                                                user?.uid ?
+                                                    <>
+                                                        {
+                                                            user?.photoURL ?
+                                                                <span title={user?.displayName}><Image className='me-3' roundedCircle src={user.photoURL} style={{ height: '40px' }} ></Image></span>
+                                                                :
+                                                                <span title={user?.displayName}><FaUser className='me-3 rounded rounded-4 p-1 fs-1 bg-info' ></FaUser></span>
+                                                        }
+                                                        {/* <span >{user?.displayName}</span> */}
+                                                        <Button onClick={handleLOgOut} className='btn-danger'>Logout</Button>
+                                                    </>
+                                                    :
+                                                    <>
+                                                        <span className='text-nowrap'>
+                                                            <Link className='' to="/login">
+                                                                <Button variant='light' className='fs-5 px-2 mb-1'>Login</Button>
+                                                            </Link>
+                                                            <Link className='' to="/register">
+                                                                <Button variant='light' className='fs-5 px-2 mb-1'><span className='text-nowrap'>Sign Up</span></Button>
+                                                            </Link>
+                                                        </span>
                                                     </>
                                             }
                                         </Nav>
 
                                         {/* theme button */}
-                                        <div className='fs-1 px-3 ms-1 d-none d-lg-block'>
+                                        <div className='display-5 px-3 ms-1 pb-1 d-none d-lg-block'>
                                             {
                                                 open ?
                                                     <>

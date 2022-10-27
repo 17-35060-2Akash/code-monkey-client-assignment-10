@@ -11,6 +11,12 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    //theme setter
+    /*   const [theme, setTheme] = useState('light');
+      const toggleTheme = () => {
+          setTheme((curr) => (curr === "light" ? "dark" : "light"))
+      }
+   */
     // goggle login 
     const providerLoginGoogle = (provider) => {
         setLoading(true);

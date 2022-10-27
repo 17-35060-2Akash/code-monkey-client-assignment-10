@@ -38,7 +38,7 @@ const Blog = () => {
             {/*  */}
             <div className='text-start container mt-5 pt-5'>
                 <h3 className='display-5 pb-5 text-primary'>2. Why are you using firebase? What other options do you have to implement authentication?</h3>
-                <p className='fs-3 fw-lighter'>
+                <div className='fs-3 fw-lighter'>
                     <strong><span className='fs-1 text-danger fw-semibold'> Firebase </span>
                         is a <span className='text-success fw-normal'>Backend-as-a-Service (Baas)</span>.
                         It provides developers with a variety of tools and
@@ -69,7 +69,7 @@ const Blog = () => {
 
                         By using such systems we got rid of traditioanl hard SQL query based DBMS's.
                     </strong>
-                </p>
+                </div>
             </div>
             {/*  */}
 
