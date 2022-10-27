@@ -78,8 +78,8 @@ const Login = () => {
 
     return (
         <section className='login-container'>
-            <Container className='login-form d-flex flex-column justify-content-center align-items-center ps-5'>
-                <Form onSubmit={handleLogin} className='text-start' style={{ width: '28rem' }}>
+            <Container className='login-form d-flex flex-column justify-content-center align-items-center'>
+                <Form onSubmit={handleLogin} className='text-start' >
                     <h2 className='display-5 text-center py-5'>Please Login Here</h2>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>

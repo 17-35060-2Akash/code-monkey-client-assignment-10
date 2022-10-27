@@ -18,6 +18,7 @@
 .course-categories:hover {
     /* background-color: rgb(220, 220, 220, 0.6); */
     /* background-color: #ece7e9; */
+    /* background-color: rgb(241, 249, 255); */
     border: none;
     transform: scale(1.07);
     transition: transform 2s ease;

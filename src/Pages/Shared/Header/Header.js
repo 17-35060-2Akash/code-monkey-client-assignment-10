@@ -71,49 +71,56 @@ const Header = () => {
                                     <Nav className='flex-grow-1 pb-2 '>
 
                                         {/* for side menu   */}
-                                        <div className='fs-1 px-3 ms-1 d-lg-none '>
+                                        <div className='fs-1 px-3 ms-1 d-lg-none d-flex align-items-center '>
                                             {
                                                 user?.uid ?
                                                     <>
                                                         {
                                                             user?.photoURL ?
-                                                                <span title={user?.displayName}><Image className='me-3' roundedCircle src={user.photoURL} style={{ height: '40px' }} ></Image></span>
+                                                                <span className='text-nowrap ms-3'>
+                                                                    <span title={user?.displayName}><Image className='me-3 ' roundedCircle src={user.photoURL} style={{ height: '40px' }} ></Image></span>
+                                                                    <Button onClick={handleLOgOut} className='btn-danger '>Logout</Button>
+                                                                </span>
                                                                 :
-                                                                <span title={user?.displayName}><FaUser className='me-3 rounded rounded-4 p-1 fs-1 bg-info' ></FaUser></span>
+                                                                <span className='text-nowrap ms-3'>
+                                                                    <span title={user?.displayName}><FaUser className='me-3 rounded-circle p-1 fs-1 bg-info' ></FaUser></span>
+                                                                    <Button onClick={handleLOgOut} className='btn-danger '>Logout</Button>
+                                                                </span>
                                                         }
-                                                        {/* <span >{user?.displayName}</span> */}
-                                                        <Button onClick={handleLOgOut} className='btn-danger'>Logout</Button>
                                                     </>
                                                     :
                                                     <>
                                                         <Link className='' to="/login">
-                                                            <Button variant='light' className='fs-5 px-2 mb-1 '>Login</Button>
+                                                            <Button variant='light' className=' px-4 '>Login</Button>
                                                         </Link>
                                                         <Link className='' to="/register">
-                                                            <Button variant='light' className='fs-5 px-2 mb-1 '><span className='text-nowrap'>Sign Up</span></Button>
+                                                            <Button variant='light' className=' px-3 '><span className='text-nowrap'>Sign Up</span></Button>
                                                         </Link>
                                                     </>
                                             }
-                                            <span title={`${theme} mode`}>
-                                                <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'} ></ReactSwitch>
-                                            </span>
-                                            {
-                                                open ?
 
-                                                    <>
-                                                        {/* <FaToggleOn onClick={() => setOpen(!open)} className='text-danger display-5 ms-5 mb-2' title='Dark Mode Switch'></FaToggleOn> */}
-                                                        {/* <p>ON</p> */}
+                                            <div className='ms-3 mt-4'>
+                                                {
+                                                    open ?
 
-                                                    </>
-                                                    :
-                                                    <>
-                                                        {/* <FaToggleOff onClick={() => setOpen(!open)} className='text-secondary display-5 ms-5 mb-2'></FaToggleOff> */}
-                                                        {/* <p>OFF</p> */}
-                                                    </>
+                                                        <>
+                                                            {/* <FaToggleOn onClick={() => setOpen(!open)} className='text-danger display-5 ms-5 mb-2' title='Dark Mode Switch'></FaToggleOn> */}
+                                                            {/* <p>ON</p> */}
 
+                                                        </>
+                                                        :
+                                                        <>
+                                                            {/* <FaToggleOff onClick={() => setOpen(!open)} className='text-secondary display-5 ms-5 mb-2'></FaToggleOff> */}
+                                                            {/* <p>OFF</p> */}
+                                                        </>
 
 
-                                            }
+
+                                                }
+                                                <span title={`${theme} mode`} className='pt-3'>
+                                                    <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'}></ReactSwitch>
+                                                </span>
+                                            </div>
 
                                         </div>
                                         <Nav className='justify-content-center flex-grow-1 ps-3 nav-links mt-1 ' >
@@ -123,27 +130,32 @@ const Header = () => {
                                             <Link className='fs-4 fw-semibold mx-4 text-secondary' to="/faq">FAQ</Link>
                                         </Nav>
 
-                                        <Nav className='d-flex flex-row align-items-center justify-content-center nav-links d-none d-lg-block mt-2'>
+                                        <Nav className='d-flex flex-row align-items-center justify-content-center nav-links d-none d-lg-block mt-3'>
                                             {
                                                 user?.uid ?
                                                     <>
                                                         {
                                                             user?.photoURL ?
-                                                                <span title={user?.displayName}><Image className='me-3' roundedCircle src={user.photoURL} style={{ height: '40px' }} ></Image></span>
+                                                                <span className='text-nowrap ms-3'>
+                                                                    <span title={user?.displayName}><Image className='me-3 ' roundedCircle src={user.photoURL} style={{ height: '40px' }} ></Image></span>
+                                                                    <Button onClick={handleLOgOut} className='btn-danger '>Logout</Button>
+                                                                </span>
                                                                 :
-                                                                <span title={user?.displayName}><FaUser className='me-3 rounded rounded-4 p-1 fs-1 bg-info' ></FaUser></span>
+                                                                <span className='text-nowrap ms-3'>
+                                                                    <span title={user?.displayName}><FaUser className='me-3 rounded-circle p-1 fs-1 bg-info' ></FaUser></span>
+                                                                    <Button onClick={handleLOgOut} className='btn-danger '>Logout</Button>
+                                                                </span>
                                                         }
                                                         {/* <span >{user?.displayName}</span> */}
-                                                        <Button onClick={handleLOgOut} className='btn-danger'>Logout</Button>
                                                     </>
                                                     :
                                                     <>
                                                         <span className='text-nowrap'>
                                                             <Link className='' to="/login">
-                                                                <Button variant='light' className='fs-5 px-2 py-1 mb-1 mt-1'>Login</Button>
+                                                                <Button variant='light' className=' px-3 py-1 mb-1 mt-1'>Login</Button>
                                                             </Link>
                                                             <Link className='' to="/register">
-                                                                <Button variant='light' className='fs-5 px-2 py-1 mb-1 mt-1'><span className='text-nowrap'>Sign Up</span></Button>
+                                                                <Button variant='light' className=' px-2 py-1 mb-1 mt-1'><span className='text-nowrap'>Sign Up</span></Button>
                                                             </Link>
                                                         </span>
                                                     </>
@@ -151,7 +163,7 @@ const Header = () => {
                                         </Nav>
 
                                         {/* theme button */}
-                                        <div className='display-5 px-3 ms-1 pb-1 d-none d-lg-block'>
+                                        <div className='display-5 px-3 pb-1 d-none d-lg-block  mt-1'>
                                             {
                                                 open ?
 
@@ -168,7 +180,7 @@ const Header = () => {
 
 
                                             }
-                                            <span title={`${theme} mode`}>
+                                            <span title={`${theme} mode`} className=''>
                                                 <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'}></ReactSwitch>
                                             </span>
 

@@ -22,7 +22,7 @@ const Home = () => {
                         />
                         <Carousel.Caption>
                             <h3 className='display-6'>Be A Pro Coder With Code Monkey</h3>
-                            <p className='fs-5 mb-5 pb-3'>Build skills by daily problem solving with real time support.</p>
+                            <p className='fs-5 mb-5 pb-5'>Build skills by daily problem solving with real time support.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -34,7 +34,7 @@ const Home = () => {
 
                         <Carousel.Caption>
                             <h3 className='display-5'>1K+ Courses & Problem Solving</h3>
-                            <p className='fs-5 mb-5 pb-3'>Examine yourself with daily updates questionnaire. </p>
+                            <p className='fs-5 mb-5 pb-5'>Examine yourself with daily updates questionnaire. </p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -46,7 +46,7 @@ const Home = () => {
 
                         <Carousel.Caption>
                             <h3 className='display-5'>Lifetime Access</h3>
-                            <p className='fs-5 mb-5 pb-3'>Get to here anytime to check materials with updates.</p>
+                            <p className='fs-5 mb-5 pb-5'>Get to here anytime to check materials with updates.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>

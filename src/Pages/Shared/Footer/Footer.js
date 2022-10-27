@@ -20,10 +20,10 @@ const Footer = () => {
                         <div className="d-flex justify-content-center align-items-center">
                             <img className="img-fluid w-25 pb-4" src={theme === 'light' ? logo2 : logo22} alt="" />
                         </div>
-                        <p className="text-center text-info fs-6">Office 41, 5/5 Monipuri Para, <br /> Bijoy Sharoni, Dhaka</p>
+                        <p className="text-center text-info fs-5">Office 41, 5/5 Monipuri Para, <br /> Bijoy Sharoni, Dhaka</p>
 
                         <div className=''>
-                            <nav className="text-white d-flex footer-nav">
+                            <nav className="text-white d-flex footer-nav fs-5">
                                 <Link to='/terms' className='p-3'>Terms of Service</Link>
                                 <Link to='/policy' className='p-3'>Privacy Policy</Link>
                             </nav>
