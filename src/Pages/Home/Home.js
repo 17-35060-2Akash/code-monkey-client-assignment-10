@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
-        <div className='py-5 my-5'>
+        <div className='pb-5 mb-5'>
             <div className=''>
                 <Carousel>
                     <Carousel.Item>

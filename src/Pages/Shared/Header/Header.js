@@ -94,7 +94,9 @@ const Header = () => {
                                                         </Link>
                                                     </>
                                             }
-                                            <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'}></ReactSwitch>
+                                            <span title={`${theme} mode`}>
+                                                <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'} ></ReactSwitch>
+                                            </span>
                                             {
                                                 open ?
 
@@ -166,7 +168,9 @@ const Header = () => {
 
 
                                             }
-                                            <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'}></ReactSwitch>
+                                            <span title={`${theme} mode`}>
+                                                <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'}></ReactSwitch>
+                                            </span>
 
                                         </div>
                                     </Nav>

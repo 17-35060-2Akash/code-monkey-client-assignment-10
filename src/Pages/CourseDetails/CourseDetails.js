@@ -5,16 +5,19 @@ import { FaFilePdf } from "react-icons/fa";
 import { FaStar, FaClock, FaArrowRight } from "react-icons/fa";
 import './CourseDetails.css';
 import { Button, Container } from 'react-bootstrap';
-
 import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+import PDFContent from '../Others/PDFContent';
+
 
 const CourseDetails = () => {
     const course = useLoaderData();
     const { id, name, image, details, ratings, duration, curriculam } = course;
     // const [open, setOpen] = useState(false);
 
+
     const generatePDF = () => {
-        const doc = new jsPDF('p', 'pt', 'a4');
+        const doc = new jsPDF('p', 'pt', 'a4', true);
         doc.html(document.querySelector('#card-to-pdf'), {
             callback: function (pdf) {
                 const pageCount = doc.internal.getNumberOfPages();
@@ -25,6 +28,19 @@ const CourseDetails = () => {
 
 
     };
+
+    /*   const generatePDF = () => {
+          const input = document.getElementById('card-to-pdf');
+          html2canvas(input, { logging: true, letterRendering: 1, useCORS: true }).then(canvas => {
+              const imgWidth = 208;
+              const imgHeight = canvas.height * imgWidth / canvas.width;
+              const imgData = canvas.toDataURL('img/png');
+              const pdf = new jsPDF('p', 'mm', 'a4');
+              pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+              pdf.save('mypdf.pdf');
+          })
+  
+      }; */
 
     return (
         <div className=''>
@@ -78,74 +94,57 @@ const CourseDetails = () => {
 
 
 
-            <Container className='small-screen-card d-block d-sm-none d-md-none d-lg-none d-flex justify-content-around align-items-center'>
-                <Card className='border-0 me-1' style={{ width: '22rem' }} >
-                    <Card.Img variant="top" src={image} />
+            <Container className='small-screen-card d-block d-sm-none d-md-none d-lg-none d-flex justify-content-around align-items-center my-5 py-5'>
+                <Card className='border-0 ' style={{ width: '22rem' }} >
+                    <Card.Img variant="top" src={image} className='' />
                     <Card.Body id='card-to-pdf'>
-                        <div className='fs-3 pt-2  d-flex align-items-center justify-content-end' title='Download PDF'>
-                            <FaFilePdf onClick={generatePDF} className='pdf-btn display-6 text-danger'></FaFilePdf>
-                        </div>
-                        <Card.Title className='display-6 mt-3 fw-normal'>{name}</Card.Title>
 
-                        <div className='d-flex align-items-center justify-content-between mt-1 '>
-                            <Card.Title className='d-flex align-items-center course-ratings '>
-                                <FaStar className='text-warning'></FaStar>
-                                <span className='ps-1'>{ratings}</span>
-                            </Card.Title>
-                            <Card.Title className='d-flex align-items-center course-ratings '>
-                                <FaClock></FaClock>
-                                <span className='ps-1'>{duration}</span>
-                            </Card.Title>
-                        </div>
 
-                        <Card.Text className='mt-2'>
-                            {details}
-                        </Card.Text>
-                        <div>
-                            <div className='text-start py-2 pt-3'>
-                                {
-                                    curriculam.map((cur, idx) => <li className=''
-                                        key={idx}>{cur}</li>)
-                                }
+                        <div >
+                            <div className='fs-3 pt-2  d-flex align-items-center justify-content-end' title='Download PDF'>
+                                <FaFilePdf onClick={generatePDF} className='pdf-btn display-6 text-danger'></FaFilePdf>
                             </div>
-                        </div>
-                        <div className=' flex-grow-1 align-items-center '>
+                            <Card.Title className='display-6 mt-3 fw-normal'>{name}</Card.Title>
 
-                            <Link to={`/checkout/${id}`}>
-                                <Button className='my-bg-pink px-4 py-2 fs-6 my-4'>Premium Access <FaArrowRight></FaArrowRight></Button>
 
-                            </Link>
+                            <Card.Text className='mt-2'>
+                                {details}
+                            </Card.Text>
+                            <div>
+                                <div className='text-start py-2 pt-3 ps-1'>
+                                    {
+                                        curriculam.map((cur, idx) => <li className=''
+                                            key={idx}>{cur}</li>)
+                                    }
+                                </div>
+                            </div>
+                            <div className=' flex-grow-1 align-items-center '>
+
+                                <Link to={`/checkout/${id}`}>
+                                    <Button className='my-bg-pink px-4 py-2 fs-6 my-4'>Premium Access <FaArrowRight></FaArrowRight></Button>
+
+                                </Link>
+                            </div>
                         </div>
 
                     </Card.Body>
                 </Card>
             </Container>
-            <div className='d-none'>
-                <Card className="text-center rounded-0 ">
-                    <Card.Header className=''>
-                        <Card.Title className=''>{name}</Card.Title>
-                    </Card.Header>
-                    <Card.Body>
-                        <Card.Text className=''>
-                            Course Duration: {duration}
-                        </Card.Text>
-
-                        <Card.Text className=''>
-                            {details}
-                        </Card.Text>
-                        <div className='d-flex align-items-center justify-content-center'>
-                            <div className='text-start py-2 pt-3'>
-                                {
-                                    curriculam.map((cur, idx) => <li className=''
-                                        key={idx}>{cur}</li>)
-                                }
-                            </div>
+            {/* <div className='' >
+                <div className="text-center rounded-0 " >
+                    <h2>{name}</h2>
+                    <div className='d-flex align-items-center justify-content-center'>
+                        <div className='text-start py-2 pt-3'>
+                            {
+                                curriculam.map((cur, idx) => <li className=''
+                                    key={idx}>{cur}</li>)
+                            }
                         </div>
+                    </div>
+                    <h4>Duration: {duration}</h4>
 
-                    </Card.Body>
-                    <Card.Footer className="text-muted">2 days ago</Card.Footer>
-                </Card>
-            </div>
+                </div>
+            </div> */}
 
         </div >
     );
@@ -155,3 +154,45 @@ export default CourseDetails;
 
 
 
+{/* <Container className='small-screen-card d-block d-sm-none d-md-none d-lg-none d-flex justify-content-around align-items-center my-5 py-5'>
+<Card className='border-0 ' style={{ width: '22rem' }} id='card-to-pdf'>
+    <Card.Img variant="top" src={image} className='' />
+    <Card.Body >
+        <div className='fs-3 pt-2  d-flex align-items-center justify-content-end' title='Download PDF'>
+            <FaFilePdf onClick={generatePDF} className='pdf-btn display-6 text-danger'></FaFilePdf>
+        </div>
+        <Card.Title className='display-6 mt-3 fw-normal'>{name}</Card.Title>
+
+        <div className='d-flex align-items-center justify-content-between mt-1 '>
+            <Card.Title className='d-flex align-items-center course-ratings '>
+                <FaStar className='text-warning'></FaStar>
+                <span className='ps-1'>{ratings}</span>
+            </Card.Title>
+            <Card.Title className='d-flex align-items-center course-ratings '>
+                <FaClock></FaClock>
+                <span className='ps-1'>{duration}</span>
+            </Card.Title>
+        </div>
+
+        <Card.Text className='mt-2'>
+            {details}
+        </Card.Text>
+        <div>
+            <div className='text-start py-2 pt-3 ps-1'>
+                {
+                    curriculam.map((cur, idx) => <li className=''
+                        key={idx}>{cur}</li>)
+                }
+            </div>
+        </div>
+        <div className=' flex-grow-1 align-items-center '>
+
+            <Link to={`/checkout/${id}`}>
+                <Button className='my-bg-pink px-4 py-2 fs-6 my-4'>Premium Access <FaArrowRight></FaArrowRight></Button>
+
+            </Link>
+        </div>
+
+    </Card.Body>
+</Card>
+</Container> */}
