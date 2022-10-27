@@ -5,6 +5,7 @@ import { FaFilePdf } from "react-icons/fa";
 import { FaStar, FaClock, FaArrowRight } from "react-icons/fa";
 import './CourseDetails.css';
 import { Button, Container } from 'react-bootstrap';
+
 import jsPDF from 'jspdf';
 
 const CourseDetails = () => {
@@ -21,6 +22,8 @@ const CourseDetails = () => {
                 pdf.save("mypdf.pdf");
             }
         });
+
+
     };
 
     return (
@@ -73,10 +76,12 @@ const CourseDetails = () => {
                 </Card.ImgOverlay>
             </Card>
 
+
+
             <Container className='small-screen-card d-block d-sm-none d-md-none d-lg-none d-flex justify-content-around align-items-center'>
-                <Card className='border-0 me-1' style={{ width: '22rem' }} id='card-to-pdf'>
+                <Card className='border-0 me-1' style={{ width: '22rem' }} >
                     <Card.Img variant="top" src={image} />
-                    <Card.Body >
+                    <Card.Body id='card-to-pdf'>
                         <div className='fs-3 pt-2  d-flex align-items-center justify-content-end' title='Download PDF'>
                             <FaFilePdf onClick={generatePDF} className='pdf-btn display-6 text-danger'></FaFilePdf>
                         </div>
@@ -115,6 +120,32 @@ const CourseDetails = () => {
                     </Card.Body>
                 </Card>
             </Container>
+            <div className='d-none'>
+                <Card className="text-center rounded-0 ">
+                    <Card.Header className=''>
+                        <Card.Title className=''>{name}</Card.Title>
+                    </Card.Header>
+                    <Card.Body>
+                        <Card.Text className=''>
+                            Course Duration: {duration}
+                        </Card.Text>
+
+                        <Card.Text className=''>
+                            {details}
+                        </Card.Text>
+                        <div className='d-flex align-items-center justify-content-center'>
+                            <div className='text-start py-2 pt-3'>
+                                {
+                                    curriculam.map((cur, idx) => <li className=''
+                                        key={idx}>{cur}</li>)
+                                }
+                            </div>
+                        </div>
+
+                    </Card.Body>
+                    <Card.Footer className="text-muted">2 days ago</Card.Footer>
+                </Card>
+            </div>
 
         </div >
     );

@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
-        <div>
+        <div className='py-5 my-5'>
             <div className=''>
                 <Carousel>
                     <Carousel.Item>
@@ -68,7 +68,7 @@ const Home = () => {
 
             </Container>
             <div>
-                <h4 className='display-3 py-3 my-5'>Join us to explore</h4>
+                <h4 className='display-3 py-3 my-5 pb-5'>Join us to explore</h4>
             </div>
             <Container className='learn-with-us-container d-flex flex-column flex-sm-column flex-md-column flex-lg-row mb-5 mt-5'>
                 <div className='text-start '>
@@ -85,7 +85,7 @@ const Home = () => {
                     </Link>
                 </div>
 
-                <Container className='options-container mt-5' >
+                <Container className='options-container mt-5 pb-5' >
                     <div className='d-flex flex-row border border-3 ps-2 pe-5 pt-3 options-div'>
                         <div className='fs-3 options-card pt-1'>
                             <FaDatabase></FaDatabase>

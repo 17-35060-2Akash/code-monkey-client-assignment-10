@@ -20,7 +20,7 @@
     /* background-color: rgb(235, 231, 231);
     padding: 10px;
     border-radius: 10px; */
-    color: 2040fe;
+    color: #2040fe;
 }
 
 .active {
@@ -31,4 +31,16 @@
 
 .my-bg-red {
     background-color: #ed1c24;
+}
+
+
+
+
+
+#light {
+    background-color: rgb(255, 255, 255);
+}
+
+#dark {
+    background-color: #ece7e9;
 }
