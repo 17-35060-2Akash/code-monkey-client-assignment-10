@@ -5,11 +5,11 @@ CodeMonkey, an website which offers programming courses.
 ##Live site Link(Firebase):
 https://code-monkey-8ad4a.web.app
 
-##Client Side Private Repository Link: 
-https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-17-35060-2Akash
+##Client Side Public Repository Link: 
+https://github.com/17-35060-2Akash/code-monkey-client-assignment-10
 
-##Server Side Private Repository Link: 
-https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-17-35060-2Akash
+##Server Side Public Repository Link: 
+https://github.com/17-35060-2Akash/code-monkey-server-assignment-10
 
 
 ## Description:
