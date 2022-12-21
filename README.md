@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+## Project Name: 
+CodeMonkey, an website which offers programming courses.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+##Live site Link(Firebase):
+https://code-monkey-8ad4a.web.app
 
-In the project directory, you can run:
+##Client Side Private Repository Link: 
+https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-17-35060-2Akash
 
-### `npm start`
+##Server Side Private Repository Link: 
+https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-17-35060-2Akash
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Description:
+Here is an website named codeMonkey. It's a react application which is designed to offer programming courses.
 
-### `npm test`
+#common parts:
+A navbar which is always in the top and the footer which is at the bottom of the page are common always. 
+For Smaller screens when you toggle the navbar toggler it opens a side panel from the right. Moreover you can see the conditional toggling 
+between Login, Sign Up, user image and Logout.
+ 
+#Home Page:
+When we visit the site, first we'll encounter the main home where you can see several promotions and information 
+about the page. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#Courses Page:
+In the home page, you can click on the course button or in the navbar, it'll redirect you to the courses page where you can
+see many programming courses. There is a panel also where courses are seen. You can click any of them to check the details.
 
-### `npm run build`
+#Course Details:
+Then you can see details of the course you have clicked. There is a PDF button here. When you click it you can see this page 
+downloaded as PDF. There's another button called premium access on which if you click it will redirect you to a checkout section 
+as a logged in user. If not you'll have visit the login page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#Login, Logout and Sign Up: 
+The login page has three types of login options. Clicking any one among them, you can land directly to the checkout page and
+see more details. Else, There is a Sign Up button in the Login page. You can register there. In the Sign Up page you can see
+terms and policy there.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#Other pages:
+There are a Blog and an FAQ also.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##API links:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://code-monkey-server.vercel.app/courses
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+https://code-monkey-server.vercel.app/courses/{id}
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
