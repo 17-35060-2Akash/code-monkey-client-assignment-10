@@ -79,22 +79,22 @@ const Header = () => {
                                                             user?.photoURL ?
                                                                 <span className='text-nowrap ms-3'>
                                                                     <span title={user?.displayName}><Image className='me-3 ' roundedCircle src={user.photoURL} style={{ height: '40px' }} ></Image></span>
-                                                                    <Button onClick={handleLOgOut} className='btn-danger '>Logout</Button>
+                                                                    <Button onClick={handleLOgOut} className='btn-danger fs-6 pb-2'>LOGOUT</Button>
                                                                 </span>
                                                                 :
                                                                 <span className='text-nowrap ms-3'>
                                                                     <span title={user?.displayName}><FaUser className='me-3 rounded-circle p-1 fs-1 bg-info' ></FaUser></span>
-                                                                    <Button onClick={handleLOgOut} className='btn-danger '>Logout</Button>
+                                                                    <Button onClick={handleLOgOut} className='btn-danger fs-6 pb-2'>LOGOUT</Button>
                                                                 </span>
                                                         }
                                                     </>
                                                     :
                                                     <>
                                                         <Link className='' to="/login">
-                                                            <Button variant='light' className=' px-4 '>Login</Button>
+                                                            <Button variant='light' className='fs-6 pb-2 px-4'>Login</Button>
                                                         </Link>
                                                         <Link className='' to="/register">
-                                                            <Button variant='light' className=' px-3 '><span className='text-nowrap'>Sign Up</span></Button>
+                                                            <Button variant='light' className='fs-6 pb-2 px-3'><span className='text-nowrap'>Sign Up</span></Button>
                                                         </Link>
                                                     </>
                                             }
@@ -117,17 +117,17 @@ const Header = () => {
 
 
                                                 }
-                                                <span title={`${theme} mode`} className='pt-3'>
+                                                <div title={`${theme} mode`} className='mb-2 pb-1'>
                                                     <ReactSwitch onChange={toggleTheme} checked={theme === 'dark'}></ReactSwitch>
-                                                </span>
+                                                </div>
                                             </div>
 
                                         </div>
-                                        <Nav className='justify-content-center flex-grow-1 ps-3 nav-links mt-1 ' >
-                                            <Link className='fs-4 fw-semibold mx-4 text-secondary ' to="/">Home</Link>
-                                            <Link className='fs-4 fw-semibold mx-4 text-secondary' to="/courses">Courses</Link>
-                                            <Link className='fs-4 fw-semibold mx-4 text-secondary' to="/blog">Blog</Link>
-                                            <Link className='fs-4 fw-semibold mx-4 text-secondary' to="/faq">FAQ</Link>
+                                        <Nav className='justify-content-center flex-grow-1 ps-3 nav-links mt-2 pt-1' >
+                                            <Link className=' fw-semibold mx-4 text-secondary ' to="/">Home</Link>
+                                            <Link className=' fw-semibold mx-4 text-secondary' to="/courses">Courses</Link>
+                                            <Link className=' fw-semibold mx-4 text-secondary' to="/blog">Blog</Link>
+                                            <Link className=' fw-semibold mx-4 text-secondary' to="/faq">FAQ</Link>
                                         </Nav>
 
                                         <Nav className='d-flex flex-row align-items-center justify-content-center nav-links d-none d-lg-block mt-3'>
@@ -138,12 +138,12 @@ const Header = () => {
                                                             user?.photoURL ?
                                                                 <span className='text-nowrap ms-3'>
                                                                     <span title={user?.displayName}><Image className='me-3 ' roundedCircle src={user.photoURL} style={{ height: '40px' }} ></Image></span>
-                                                                    <Button onClick={handleLOgOut} className='btn-danger '>Logout</Button>
+                                                                    <Button onClick={handleLOgOut} className='btn-danger fs-6 pb-2 mt-1 ms-1'>LOGOUT</Button>
                                                                 </span>
                                                                 :
                                                                 <span className='text-nowrap ms-3'>
                                                                     <span title={user?.displayName}><FaUser className='me-3 rounded-circle p-1 fs-1 bg-info' ></FaUser></span>
-                                                                    <Button onClick={handleLOgOut} className='btn-danger '>Logout</Button>
+                                                                    <Button onClick={handleLOgOut} className='btn-danger fs-6 pb-2 mt-1 ms-1'>LOGOUT</Button>
                                                                 </span>
                                                         }
                                                         {/* <span >{user?.displayName}</span> */}
